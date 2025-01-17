@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>祝我全世界最最最好看的姐姐生日快乐</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #ffebf5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			overflow-x: hidden;
+			font-family: '华文新魏', Courier, monospace;
+			padding: 20px;
+		}
+		.card {
+			width: 90%;
+			max-width: 300px;
+			text-align: center;
+			position: relative;
+			opacity: 0;
+			transform: translateY(20px);
+			animation: slideIn 1s ease-out forwards;
+			margin-bottom: 20px;
+		}
+		.card img {
+			width: 100%;
+			max-width: 280px;
+			height: auto;
+			border-bottom: 2px dashed #9e768f;
+		}
+		.message {
+			margin-top: 20px;
+			color: #9e768f;
+			line-height: 1.5;
+			font-size: 16px;
+			padding: 0 10px;
+		}
+		.cursor {
+			display: inline-block;
+			width: 4px;
+			height: 20px;
+			background-color: #9e768f;
+			
+			vertical-align: middle;
+			animation: blink-caret .75s step-end infinite;
+		}
+		@keyframes slideIn {
+			to { opacity: 1; transform: translateY(0); }
+		}
+		@keyframes blink-caret {
+			from, to { border-color: transparent }
+			50% { border-color: #9e768f; }
+		}
+		.button-container {
+			margin-top: 20px;
+			margin-bottom: 40px;
+			opacity: 0;
+			transition: opacity 1s ease-out;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 12px;
+		}
+		.button-container.visible {
+			opacity: 1;
+		}
+		button {
+			padding: 8px 15px;
+			background-color: #9e768f;
+			color: white;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+			width: 180px;
+			font-size: 14px;
+		}
+		button:hover {
+			background-color: #8a6c85;
+		}
+		/* 定义关键帧动画 */
+		@keyframes slideDown {
+			from {
+				
+				transform: translate(-50%, -100%);
+				opacity: 0;
+			}
+			to {
+				transform: translate(-50%, 0);
+				opacity: 1;
+			}
+		}
+
+		/* 应用到文字的样式 */
+		.text-slide-down {
+			position: fixed;
+			top: 8%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			font-size: 1.5em;
+			animation: slideDown 2s ease-out forwards;
+			white-space: normal;
+			width: 80%;
+			text-align: center;
+			padding: 0 10px;
+			box-sizing: border-box;
+			line-height: 1.4;
+		}
+
+		/* 添加媒体查询以适应不同屏幕尺寸 */
+		@media screen and (max-width: 480px) {
+			.text-slide-down {
+				font-size: 1.1em;
+				top: 3%;
+				width: 90%;
+			}
+			
+			.card {
+				margin-top: 60px;
+				width: 95%;
+			}
+			
+			button {
+				width: 160px;
+				padding: 10px 15px;
+				font-size: 14px;
+			}
+
+			.button-container {
+				gap: 10px;
+			}
+
+			body {
+				min-height: 100vh;
+				padding: 10px;
+				overflow-y: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="text-slide-down">
+    冬日不寒，温暖相伴，生日如诗！
+</div>
+<div class="card">
+	<img src="https://img.alicdn.com/imgextra/i3/O1CN01CWFiQG1QvuaFkLxTL_!!6000000002039-2-tps-1024-1024.png" alt="Birthday Cake">
+	<div class="message" id="greeting"></div>
+	<div class="button-container" id="buttonContainer">
+		<button onclick="window.location.href='liti.html'">点我有惊喜</button>
+		<button onclick="window.location.href='xuanzhuan.html'">还有一个惊喜</button>
+		<button onclick="window.location.href='EasterEgg.html'">最后的惊喜</button>
+	</div>
+</div>
+
+<script>
+	const messageElement = document.getElementById('greeting');
+	const buttonContainer = document.getElementById('buttonContainer');
+	const messages = [
+		"祝我全世界最最最好看的姐姐",
+		"生日快乐！",
+		"⁺₊♡*²⁰²⁴/₁₁.26",
+		"一寸一礼 ，一生欢喜",
+		"东风街来小欢喜，一岁总有一岁期",
+		"每一个梦想都触手可及，所求皆是上上签"
+	];
+	let currentMessageIndex = 0;
+	let charIndex = 0;
+
+	function typeWriter() {
+		if (currentMessageIndex < messages.length) {
+			if (charIndex < messages[currentMessageIndex].length) {
+				messageElement.innerHTML += messages[currentMessageIndex].charAt(charIndex);
+				charIndex++;
+				setTimeout(typeWriter, 100);
+			} else {
+				messageElement.innerHTML += '<br>';
+				currentMessageIndex++;
+				charIndex = 0;
+				setTimeout(typeWriter, 1000);
+			}
+		} else {
+			// Remove cursor after all messages are typed
+			const cursorSpan = document.querySelector('.cursor');
+			if (cursorSpan) {
+				cursorSpan.remove();
+			}
+			// Show the next page button
+			buttonContainer.classList.add('visible');
+		}
+	}
+
+	window.onload = () => {
+		typeWriter();
+	};
+</script>
+</body>
+</html>
+
+
+

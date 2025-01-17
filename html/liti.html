@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>祝我全世界最最最好看的姐姐生日快乐</title>
+<link type="text/css" href="../css/style1.css" rel="stylesheet" />
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const box = document.querySelector('.box');
+    
+    // 触摸开始时添加hover效果
+    box.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // 阻止默认行为
+        this.classList.add('touch-hover');
+    });
+    
+    // 触摸结束时移除hover效果
+    box.addEventListener('touchend', function() {
+        this.classList.remove('touch-hover');
+    });
+});
+</script>
+</head>
+<body>
+ 
+<div class="box">
+	<ul class="minbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ol class="maxbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+</div>
+<audio src="../music/1.mp3" autoplay="autoplay">
+</body>
+</html>

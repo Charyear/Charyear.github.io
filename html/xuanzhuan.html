@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祝我全世界最最最好看的姐姐生日快乐</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            background: #4169E1;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            perspective: 900px;
+            font-family: '华文新魏', Courier, monospace;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            position: relative;
+            width: 300px;
+            height: 200px;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            animation:rotate 20s linear infinite;
+        }
+        img{
+            width: 300px;
+            height: 200px;
+        }
+        section:hover{
+            animation-play-state: paused;
+        }
+        section div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            -webkit-box-reflect:below 15px 
+            -webkit-linear-gradient(transparent 10%,rgba(255,255,255,.3));
+        }
+        section div:nth-child(1){
+            transform: translatez(300px);
+            background-color: #c14c39;
+        }
+        section div:nth-child(2){
+            transform:rotateY(60deg) translatez(300px);
+            background-color: #6e9c72;
+        }
+        section div:nth-child(3){
+            transform:rotateY(120deg) translatez(300px);
+            background-color: #5e5f7a;
+        }
+        section div:nth-child(4){
+            transform:rotateY(180deg) translatez(300px);
+            background-color: #f5eb98;
+        }
+        section div:nth-child(5){
+            transform:rotateY(240deg) translatez(300px);
+            background-color: #50a3bc;
+        }
+        section div:nth-child(6){
+            transform:rotateY(300deg) translatez(300px);
+            background-color: #f9a99a;
+        }
+        .click-text {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            margin-bottom: 40px;
+            color: #fff;
+            font-size: 28px;
+            opacity: 0;
+            animation: textScale 2s ease forwards;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        @keyframes textScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes rotate {
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+
+        @media screen and (max-width: 768px) and (orientation: portrait) {
+            body {
+                padding: 20px;
+                perspective: 600px;
+            }
+            
+            .click-text {
+                font-size: 18px;
+                margin-bottom: 25px;
+                width: 85%;
+                padding: 0 10px;
+            }
+
+            section {
+                width: 200px;
+                height: 133px;
+                margin: 0 auto;
+            }
+            
+            img {
+                width: 200px;
+                height: 133px;
+            }
+            
+            section div:nth-child(1) { transform: translatez(200px); }
+            section div:nth-child(2) { transform: rotateY(60deg) translatez(200px); }
+            section div:nth-child(3) { transform: rotateY(120deg) translatez(200px); }
+            section div:nth-child(4) { transform: rotateY(180deg) translatez(200px); }
+            section div:nth-child(5) { transform: rotateY(240deg) translatez(200px); }
+            section div:nth-child(6) { transform: rotateY(300deg) translatez(200px); }
+            
+            section div {
+                -webkit-box-reflect: below 10px 
+                -webkit-linear-gradient(transparent 10%, rgba(255,255,255,.3));
+            }
+        }
+
+        @media screen and (max-width: 320px) and (orientation: portrait) {
+            section {
+                width: 160px;
+                height: 107px;
+            }
+            
+            img {
+                width: 160px;
+                height: 107px;
+            }
+            
+            section div:nth-child(1) { transform: translatez(160px); }
+            section div:nth-child(2) { transform: rotateY(60deg) translatez(160px); }
+            section div:nth-child(3) { transform: rotateY(120deg) translatez(160px); }
+            section div:nth-child(4) { transform: rotateY(180deg) translatez(160px); }
+            section div:nth-child(5) { transform: rotateY(240deg) translatez(160px); }
+            section div:nth-child(6) { transform: rotateY(300deg) translatez(160px); }
+        }
+    </style>
+</head>
+<body>
+    <p class="click-text">祝全世界最美的微小姐生日快乐呀！</p>
+    <section>
+        <div><img src="../images/1.jpg"></div>
+        <div><img src="../images/2.jpg"></div>
+        <div><img src="../images/3.jpg"></div>
+        <div><img src="../images/4.jpg"></div>
+        <div><img src="../images/5.jpg"></div>
+        <div><img src="../images/timg.gif"></div>
+    </section>
+    <audio src="../music/1.mp3" autoplay="autoplay"></audio>
+</body>
+</html>

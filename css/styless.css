@@ -1,0 +1,511 @@
+body {
+	display:block;
+	margin:0px;
+	overflow:hidden;
+  font-family: '华文新魏', Courier, monospace;
+}
+
+#cake {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-top: -10em;
+}
+
+/* ============================================== Candle
+*/
+.bg {
+  width: 100%;
+  background: #4169E1;
+  background: -webkit-linear-gradient(top left, #4169E1 0%, #4169E1 100%);
+  background: linear-gradient(to bottom right, #4169E1 0%, #4169E1 100%);
+}
+.velas {
+  background: #ffffff;
+  border-radius: 10px;
+  position: relative;
+  top: 247px;
+  margin-left: 49.5%;
+  width: 5px;
+  height: 35px;
+  -webkit-transform: translateY(-300px);
+  -ms-transform: translateY(-300px);
+  transform: translateY(-300px);
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation: in 500ms 6s ease-out forwards;
+  animation: in 500ms 6s ease-out forwards;
+}
+
+.velas:after,
+.velas:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.22222222px;
+}
+
+.velas:after {
+  top: 25%;
+  left: 0;
+}
+
+.velas:before {
+  top: 45%;
+  left: 0;
+}
+
+/* ============================================== Fire
+*/
+.fuego {
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  left: 70%;
+  margin-left: -2.2px;
+  width: 6.66666667px;
+  height: 18px;
+}
+
+.fuego:nth-child(1) {
+  -webkit-animation: fuego 2s 6.5s infinite;
+  animation: fuego 2s 6.5s infinite;
+}
+
+.fuego:nth-child(2) {
+  -webkit-animation: fuego 1.5s 6.5s infinite;
+  animation: fuego 1.5s 6.5s infinite;
+}
+
+.fuego:nth-child(3) {
+  -webkit-animation: fuego 1s 6.5s infinite;
+  animation: fuego 1s 6.5s infinite;
+}
+
+.fuego:nth-child(4) {
+  -webkit-animation: fuego 0.5s 6.5s infinite;
+  animation: fuego 0.5s 6.5s infinite;
+}
+
+.fuego:nth-child(5) {
+  -webkit-animation: fuego 0.2s 6.5s infinite;
+  animation: fuego 0.2s 6.5s infinite;
+}
+
+/* ============================================== Animation Fire
+*/
+@-webkit-keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    -webkit-box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    -webkit-box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    -webkit-transform: translateY(-20px) scale(0);
+    transform: translateY(-20px) scale(0);
+  }
+}
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    -webkit-box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    -webkit-box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    -webkit-transform: translateY(-20px) scale(0);
+    transform: translateY(-20px) scale(0);
+  }
+}
+@-webkit-keyframes in {
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes in {
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.come {
+	animation-delay:0.4s;
+	animation:coming 2s;
+	opacity:1;
+}
+@keyframes coming{
+	from{
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@-webkit-keyframes coming{
+	from{
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+
+.bg-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.bg-bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 5px; /* 原来的20px缩小4倍变为5px */
+    height: 5px; /* 原来的20px缩小4倍变为5px */
+    background-color: rgba(255, 255, 255, 0.15);
+    bottom: -160px;
+    -webkit-animation: square 30s infinite;
+    animation: square 30s infinite;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+.bg-bubbles li:nth-child(1) {
+  left: 10%;
+}
+.bg-bubbles li:nth-child(2) {
+  left: 20%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+}
+.bg-bubbles li:nth-child(3) {
+  left: 30%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+}
+.bg-bubbles li:nth-child(4) {
+  left: 40%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+}
+.bg-bubbles li:nth-child(5) {
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+}
+.bg-bubbles li:nth-child(6) {
+  left: 60%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay:6s;
+          animation-delay: 6s;
+  -webkit-animation-duration: 19s;
+          animation-duration: 19s;
+}
+.bg-bubbles li:nth-child(7) {
+  left: 70%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay:3s;
+          animation-delay: 3s;
+  -webkit-animation-duration: 19s;
+          animation-duration: 19s;
+}
+.bg-bubbles li:nth-child(8) {
+  left: 80%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay:4s;
+          animation-delay: 4s;
+  -webkit-animation-duration: 19s;
+          animation-duration: 19s;
+}
+.bg-bubbles li:nth-child(9) {
+  left: 90%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay:8s;
+          animation-delay: 8s;
+  -webkit-animation-duration: 19s;
+          animation-duration: 19s;
+}
+.bg-bubbles li:nth-child(10) {
+  left: 100%;
+  width: 5px;
+  height: 5px;
+  -webkit-animation-delay:5s;
+          animation-delay: 5s;
+  -webkit-animation-duration: 19s;
+          animation-duration: 19s;
+}
+@-webkit-keyframes square {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-900px) rotate(600deg);
+            transform: translateY(-900px) rotate(600deg);
+  }
+}
+@keyframes square {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-900px) rotate(600deg);
+            transform: translateY(-900px) rotate(600deg);
+  }
+}
+
+.happy {
+	position:absolute;
+	left:50%;
+	top:49%;
+	transform: translateX(-50%);
+	opacity: 1;
+	animation: happybirthdays 10s;
+	animation-delay: 0s;
+}
+@keyframes happybirthdays {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, -20px);
+	}
+	70% {
+		opacity: 0;
+		transform: translate(-50%, -10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+}
+@-webkit-keyframes happybirthdays {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, -20px);
+	}
+	70% {
+		opacity: 0;
+		transform: translate(-50%, -10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+}
+
+.button-style1, .button-style2, .button-style3 {
+    position: absolute;
+    opacity: 1;
+    z-index: 100;
+    left: 50%; /* 所有按钮都水平居中 */
+    transform: translateX(-50%); /* 配合left:50%实现真正的水平居中 */
+}
+
+.button-style1 {
+    top: 65%; /* 第一个按钮的位置 */
+    animation: btn1 15s;
+}
+
+.button-style2 {
+    top: 75%; /* 第二个按钮的位置 */
+    animation: btn2 15s;
+}
+
+.button-style3 {
+    top: 85%; /* 第三个按钮的位置 */
+    animation: btn3 15s;
+}
+
+/* 修改按钮1的动画 */
+@keyframes btn1 {
+    0% {
+        opacity: 0;
+        top: 45%;
+    }
+    70% {
+        opacity: 0;
+        top: 55%;
+    }
+    100% {
+        opacity: 1;
+        top: 65%;
+    }
+}
+
+/* 修改按钮2的动画 */
+@keyframes btn2 {
+    0% {
+        opacity: 0;
+        top: 45%;
+    }
+    70% {
+        opacity: 0;
+        top: 65%;
+    }
+    100% {
+        opacity: 1;
+        top: 75%;
+    }
+}
+
+/* 修改按钮3的动画 */
+@keyframes btn3 {
+    0% {
+        opacity: 0;
+        top: 45%;
+    }
+    70% {
+        opacity: 0;
+        top: 75%;
+    }
+    100% {
+        opacity: 1;
+        top: 85%;
+    }
+}
+
+/* 修改按钮容器的样式 */
+.link1, .link2, .link3 {
+    width: 170px;
+    height: 60px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-size: 23px;
+    text-align: center;
+    background: #4169E1;
+    transition: all 0.8s;
+    margin: 10px auto; /* 添加垂直间距 */
+}
+
+/* 添加响应式布局支持 */
+@media screen and (max-width: 768px) {
+    .link1, .link2, .link3 {
+        width: 150px; /* 在小屏幕上稍微缩小按钮宽度 */
+        font-size: 20px; /* 在小屏幕上稍微缩小字体 */
+    }
+    
+    .happy {
+        left: 50% !important; /* 强制水平居中 */
+        transform: translateX(-50%) !important;
+        width: 90%; /* 控制图片宽度 */
+        max-width: 300px; /* 设置最大宽度 */
+    }
+    
+    #cake {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+.lk1, .lk2, .lk3 {
+	text-decoration: none;
+	font-family: Microsoft YaHei;
+	color: #fff;
+	transition: all 0.5s;
+}
+
+a.lk1:hover, a.lk2:hover, a.lk3:hover {
+	color: #61949b;
+	transition: all 0.5s;
+}
+
+.link1:hover, .link2:hover, .link3:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 2px solid #BBB;
+	color: #000; /* 设置鼠标悬停时的字体颜色为黑色 */
+	transition: all 0.8s;
+}
+/* 定义关键帧动画 */
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* 应用到文字的样式 */
+.text-slide-down {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    animation: slideDown 2s ease-out forwards;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+}
+
+/* 响应式布局调整 */
+@media screen and (max-width: 768px) {
+    .text-slide-down {
+        font-size: 1.8em;
+        width: 90%;
+        white-space: normal;
+    }
+
+    #cake {
+        transform: translateX(-50%) scale(0.6) !important;
+        margin-top: 0;
+    }
+
+    .happy {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+/* 更小屏幕的特殊处理 */
+@media screen and (max-width: 320px) {
+    .text-slide-down {
+        font-size: 1.5em;
+    }
+
+    #cake {
+        transform: translateX(-50%) scale(0.5) !important;
+    }
+}
